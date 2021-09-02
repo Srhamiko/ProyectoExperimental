@@ -1,0 +1,35 @@
+--------------------
+# S O U R C E
+--------------------
+/gate/source/addSource xraygun
+/gate/source/verbose 0
+/gate/source/twogamma/setActivity 6500. becquerel
+/gate/source/xraygun/gps/ verbose 0
+#PARTICLE
+/gate/source/xraygun/gps/particle gamma
+
+#SPECTRUM
+/gate/source/xraygun/gps/energytype Gauss
+/gate/source/xraygun/gps/Gauss
+/gate/source/xraygun/gps/emin 19.5 keV
+/gate/source/xraygun/gps/max 21 keV
+/gate/source/xraygun/gps/type Plane
+
+#SHAPE
+/gate/source/xraygun/gps/shape Rectangle
+
+#POSITION
+/gate/source/xraygun/gps/halfx 0.015 mm
+/gate/source/xraygun/gps/halfy 0.015 mm
+
+#EMISSION ANGLES
+/gate/source/xraygun/gps/mintheta 0 deg
+/gate/source/xraygun/gps/maxtheta 0.9 deg
+
+#UBICACIÓN DE LA FUENTE
+/gate/source/xraygun/gps/centre 0. 0. -13.0 cm
+
+#SET THE ANGULAR DISTRIBUTION OF EMISSION
+/gate/source/xraygun/gps/angtype iso
+
+/gate/source/list

@@ -1,0 +1,64 @@
+------------------------
+#VISUALIZATION PARAMETERS (Primero)
+-----------------------
+/control/execute visu.mac
+
+-------------------------------
+#SET MATERIAL DATABASE (Segundo)
+-------------------------------
+/gate/geometry/setMaterialDatabase ../data/GateMaterials.db
+
+---------------------
+# WORLD (Tercero)
+---------------------
+/gate/world/geometry/setXLength 40. cm
+/gate/world/geometry/setYLength 40. cm
+/gate/world/geometry/setZLength 40. cm
+/gate/world/setMaterial Air
+/gate/world/vis/setVisible 0
+
+--------------------------
+#DETECTOR (Cuarto)
+--------------------------
+/control/execute CTScanner.mac
+
+--------------------------
+#PHANTOM (Quinto)
+--------------------------
+
+--------------------------
+#FISICAS (SEXTO)
+--------------------------
+/control/execute physics.mac
+
+--------------------------
+#DIGITZER (SEPTIMO)
+--------------------------
+/control/execute digitizer.mac
+
+--------------------------
+#OUTPUT (OCTAVO)
+--------------------------
+/control/execute output.mac
+
+--------------------------
+#VERBOSITY (NOVENO)
+--------------------------
+/control/execute verbose.mac
+
+--------------------------
+#INITIALIZATION (DECIMO)
+--------------------------
+/gate/run/initialize
+
+--------------------
+# SOURCE GPS (ONCEVAO)
+--------------------
+/control/execute Source.mac
+
+--------------------------------------
+# START THE ACQUISITION (DOCEAVO y ULTIMO)
+--------------------------------------
+/control/execute acquisition.mac
+
+exit
