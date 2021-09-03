@@ -1,3 +1,2 @@
-/gate/application/setTotalNumberOfPrimaries
-    60.4915 e6
+/gate/application/setTotalNumberOfPrimaries 60e6
 /gate/application/startDAQ

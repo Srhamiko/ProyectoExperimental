@@ -5,5 +5,5 @@
 /gate/output/tree/addCollection Singles
 
 #CREATE 2 NEW FILES
-/tmp/p.hits.npy
-/tmp/p.Singles.npy
+#/tmp/p.hits.npy
+#/tmp/p.Singles.npy

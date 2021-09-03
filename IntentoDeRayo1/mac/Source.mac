@@ -1,18 +1,18 @@
---------------------
+#--------------------
 # S O U R C E
---------------------
+#--------------------
 /gate/source/addSource xraygun
 /gate/source/verbose 0
-/gate/source/twogamma/setActivity 6500. becquerel
-/gate/source/xraygun/gps/ verbose 0
+/gate/source/xraygun/setActivity 6500. becquerel
+#/gate/source/xraygun/gps/ verbose 0
 #PARTICLE
 /gate/source/xraygun/gps/particle gamma
 
 #SPECTRUM
 /gate/source/xraygun/gps/energytype Gauss
-/gate/source/xraygun/gps/Gauss
+#/gate/source/xraygun/gps/Gauss
 /gate/source/xraygun/gps/emin 19.5 keV
-/gate/source/xraygun/gps/max 21 keV
+/gate/source/xraygun/gps/emax 21 keV
 /gate/source/xraygun/gps/type Plane
 
 #SHAPE
