@@ -1,0 +1,9 @@
+#ENABLE UNIFIED TREE OUTPUT NUMPY WITH HITS AND SINGLES
+/gate/output/tree/enable
+/gate/output/tree/addFileName /tmp/p.npy
+/gate/output/tree/hits/enable
+/gate/output/tree/addCollection Singles
+
+#CREATE 2 NEW FILES
+#/tmp/p.hits.npy
+#/tmp/p.Singles.npy
