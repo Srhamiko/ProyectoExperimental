@@ -1,0 +1,29 @@
+#Fantoma
+/gate/world/daughters/name Fantoma
+/gate/world/daughters/insert box
+/gate/Fantoma/placement/setTranslation 0.0 0.0 0.0 cm
+/gate/Fantoma/geometry/setXLength 4 cm
+/gate/Fantoma/geometry/setYLength 4 cm
+/gate/Fantoma/geometry/setZLength 44 mm
+/gate/Fantoma/setMaterial PMMA
+/gate/Fantoma/vis/forceWireframe
+
+
+#Cristales BGO
+/gate/Fantoma/daughters/name LSO0
+/gate/Fantoma/daughters/insert wedge
+/gate/LSO0/geometry/setXLength 10 mm
+/gate/LSO0/geometry/setNarrowerXLength 8.921 mm
+/gate/LSO0/geometry/setYLength 2.1620 mm
+/gate/LSO0/geometry/setZLength 2.1620 mm
+/gate/LSO0/placement/setRotationAxis 0 1 0
+/gate/LSO0/placement/setRotationAngle 180 deg
+/gate/LSO0/placement/setTranslation 0.2698 0. 0. mm
+/gate/LSO0/setMaterial BGO 
+
+/gate/LSO0/repeaters/insert ring
+/gate/LSO0/ring/setRepeatNumber 5
+/gate/LSO0/ring/setPoint1 0. 0. 2. mm
+/gate/LSO0/ring/setPoint2 0. 0. 0. mm
+
+

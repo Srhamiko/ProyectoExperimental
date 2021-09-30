@@ -1,0 +1,2 @@
+/gate/application/setTotalNumberOfPrimaries 1e3
+/gate/application/startDAQ
