@@ -1,0 +1,8 @@
+/gate/actor/addActor DoseActor              Detector
+/gate/actor/Detector/save                   output-Dosis.mhd
+/gate/actor/Detector/attachTo               CTscanner
+/gate/actor/Detector/stepHitType            random
+/gate/actor/Detector/setDoseAlgorithm       VolumeWeighting
+/gate/actor/Detector/setResolution          512 512 1
+/gate/actor/Detector/enableNumberOfHits     true
+

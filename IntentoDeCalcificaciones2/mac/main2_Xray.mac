@@ -1,0 +1,78 @@
+#------------------------
+#VISUALIZATION PARAMETERS (Primero)
+#-----------------------
+/control/execute visu.mac
+
+#-------------------------------
+#SET MATERIAL DATABASE (Segundo)
+#-------------------------------
+/gate/geometry/setMaterialDatabase ../data/GateMaterial.db
+
+#---------------------
+# WORLD (Tercero)
+#---------------------
+/gate/world/geometry/setXLength 40. cm
+/gate/world/geometry/setYLength 40. cm
+/gate/world/geometry/setZLength 40. cm
+/gate/world/setMaterial Air
+/gate/world/vis/setVisible 0
+
+#--------------------------
+#DETECTOR (Cuarto)
+#--------------------------
+/control/execute CTScanner.mac
+
+#--------------------------
+#PHANTOM (Quinto)
+#--------------------------
+/control/execute phantom.mac
+
+#--------------------------
+#FISICAS (SEXTO)
+#--------------------------
+/control/execute Fisicas.mac
+
+#--------------------------
+#DIGITZER (SEPTIMO)
+#--------------------------
+/control/execute digitizer.mac
+
+#--------------------------
+#OUTPUT (OCTAVO)
+#--------------------------
+/control/execute output.mac
+
+#--------------------------
+#VERBOSITY (NOVENO)
+#--------------------------
+/control/execute verbose.mac
+
+#--------------------------
+#INITIALIZATION (DECIMO)
+#--------------------------
+/gate/run/initialize
+
+#--------------------
+# SOURCE GPS (ONCEVAO)
+#--------------------
+/gate/source/addSource xraygun
+/gate/source/xraygun/gps/particle e-
+/gate/source/xraygun/gps/ene/type Gauss
+/gate/source/xraygun/gps/ene/mono 12.2 MeV
+/gate/source/xraygun/gps/ene/sigma 0.0216 MeV
+/gate/source/xraygun/gps/centre 0 0 -55 cm
+#/gate/source/xraygungps/angtype iso
+/gate/source/xraygun/gps/mintheta 0 deg
+/gate/source/xraygun/gps/maxtheta 0 deg
+/gate/source/xraygun/gps/minphi 0 deg
+/gate/source/xraygun/gps/maxphi 0 deg
+/gate/source/xraygun/gps/type Plane
+/gate/source/xraygun/gps/shape Circle
+/gate/source/xraygun/gps/radius 1.4 mm
+
+#--------------------------------------
+# START THE ACQUISITION (DOCEAVO y ULTIMO)
+#--------------------------------------
+/control/execute acquisition.mac
+
+exit
