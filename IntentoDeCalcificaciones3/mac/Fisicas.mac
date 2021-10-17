@@ -1,0 +1,4 @@
+/gate/physics/addPhysicsList emstandard_opt4
+
+#/gate/physics/Gamma/SetCutlnRegion world 10mm
+#/gate/physics/Electron/SetCutlnRegion world 10mm

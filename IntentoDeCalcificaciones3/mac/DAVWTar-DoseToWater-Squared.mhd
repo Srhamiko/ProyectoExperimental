@@ -1,0 +1,13 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = 1 0 0 0 1 0 0 0 1
+Offset = -24.5 -24.5 -2.25
+CenterOfRotation = 0 0 0
+ElementSpacing = 1 1 0.5
+DimSize = 50 50 10
+AnatomicalOrientation = ???
+ElementType = MET_FLOAT
+ElementDataFile = DAVWTar-DoseToWater-Squared.raw

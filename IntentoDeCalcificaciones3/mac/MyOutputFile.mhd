@@ -1,0 +1,13 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = 1 0 0 0 1 0 0 0 1
+Offset = -24.75 -24.75 -2.375
+CenterOfRotation = 0 0 0
+ElementSpacing = 0.5 0.5 0.25
+DimSize = 100 100 20
+AnatomicalOrientation = ???
+ElementType = MET_FLOAT
+ElementDataFile = MyOutputFile.raw

@@ -1,0 +1,14 @@
+
+/gate/actor/addActor DoseActor                DAVW2
+/gate/actor/DAVW2/save                         DAVWTar.mhd
+/gate/actor/DAVW2/attachTo                     CTscanner
+/gate/actor/DAVW2/stepHitType                  random
+/gate/actor/DAVW2/setDoseAlgorithm             VolumeWeighting
+/gate/actor/DAVW2/setResolution               50 50 10
+/gate/actor/DAVW2/enableDose                   true
+/gate/actor/DAVW2/enableSquaredDose            true
+/gate/actor/DAVW2/enableUncertaintyDose        true
+/gate/actor/DAVW2/normaliseDoseToMax          false
+/gate/actor/DAVW2/enableEdep                  true
+/gate/actor/DAVW2/enableDoseToWater                   true
+/gate/actor/DAVW2/enableUncertaintyDoseToWater        true

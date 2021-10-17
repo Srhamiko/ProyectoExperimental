@@ -1,0 +1,32 @@
+#Fantoma
+/gate/world/daughters/name Fantoma
+/gate/world/daughters/insert box
+/gate/Fantoma/placement/setTranslation 0.0 0.0 0.0 cm
+/gate/Fantoma/geometry/setXLength 3 cm
+/gate/Fantoma/geometry/setYLength 3 cm
+/gate/Fantoma/geometry/setZLength 2 mm
+/gate/Fantoma/setMaterial PMMA
+/gate/Fantoma/vis/forceWireframe
+/gate/Fantoma/vis/setColor red
+
+
+#Cristales BGO
+/gate/Fantoma/daughters/name crystalHAs
+/gate/Fantoma/daughters/insert sphere
+/gate/crystalHAs/placement/setTranslation -4.5 0. 0. mm
+
+/gate/crystalHAs/geometry/setRmin 0 mm
+/gate/crystalHAs/geometry/setRmax 1 mm
+/gate/crystalHAs/geometry/setPhiStart 0 deg
+/gate/crystalHAs/geometry/setDeltaPhi 360 deg
+/gate/crystalHAs/geometry/setThetaStart 0 deg
+/gate/crystalHAs/geometry/setDeltaTheta 360 deg
+/gate/crystalHAs/setMaterial Skull
+#/gate/crystalHAs/vis/forceWireframe
+/gate/crystalHAs/vis/setColor yellow
+
+/gate/crystalHAs/repeaters/insert linear
+/gate/crystalHAs/linear/setRepeatNumber 5
+/gate/crystalHAs/linear/setRepeatVector 2. 0. 0. mm 
+/gate/crystalHAs/linear/autoCenter true
+

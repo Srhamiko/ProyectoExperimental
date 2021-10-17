@@ -1,0 +1,93 @@
+#------------------------
+#VISUALIZATION PARAMETERS (Primero)
+#-----------------------
+/control/execute visu.mac
+
+#-------------------------------
+#SET MATERIAL DATABASE (Segundo)
+#-------------------------------
+/gate/geometry/setMaterialDatabase ../data/GateMaterial.db
+
+#---------------------
+# WORLD (Tercero)
+#---------------------
+/gate/world/geometry/setXLength 2. m
+/gate/world/geometry/setYLength 2. m
+/gate/world/geometry/setZLength 2. m
+/gate/world/setMaterial Air
+/gate/world/vis/setVisible 0
+
+#--------------------------
+#DETECTOR (Cuarto)
+#--------------------------
+#/control/execute CTScanner.mac
+
+/gate/world/daughters/name CTscanner
+/gate/world/daughters/insert box
+/gate/CTscanner/setMaterial Tungsten
+/gate/CTscanner/geometry/setXLength 50 mm
+/gate/CTscanner/geometry/setYLength 50 mm
+/gate/CTscanner/geometry/setZLength 5 mm
+/gate/CTscanner/vis/forceSolid
+/gate/CTscanner/vis/setColor yellow
+/gate/CTscanner/placement/setTranslation 0. 0. 5. cm
+#--------------------------
+#PHANTOM (Quinto)
+#--------------------------
+/control/execute phantom.mac
+/gate/Fantoma/moves/insert rotation
+/gate/Fantoma/placement/setRotationAngle 10 deg
+/gate/Fantoma/rotation/setSpeed 10. deg/s
+/gate/Fantoma/rotation/setAxis 0 0 1
+
+#--------------------------
+#FISICAS (SEXTO)
+#--------------------------
+/control/execute Fisicas.mac
+
+#--------------------------
+#DIGITZER (SEPTIMO)
+#--------------------------
+/control/execute ParticulasActor.mac
+#/control/execute digitizer.mac
+
+#--------------------------
+#OUTPUT (OCTAVO)
+#--------------------------
+#/control/execute output.mac
+
+#--------------------------
+#VERBOSITY (NOVENO)
+#--------------------------
+/control/execute verbose.mac
+
+#--------------------------
+#INITIALIZATION (DECIMO)
+#--------------------------
+/gate/run/initialize
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed auto
+#--------------------
+# SOURCE GPS (ONCEVAO)
+#--------------------
+/gate/source/addSource electron_beam gps
+/gate/source/electron_beam/gps/particle gamma
+/gate/source/electron_beam/gps/ene/type Gauss
+/gate/source/electron_beam/gps/ene/mono 0.02 MeV
+/gate/source/electron_beam/gps/ene/sigma 0.00216 MeV
+/gate/source/electron_beam/gps/centre 0 0 -23 cm
+/gate/source/electron_beam/gps/angtype iso
+/gate/source/electron_beam/gps/mintheta 0 deg
+/gate/source/electron_beam/gps/maxtheta 0 deg
+/gate/source/electron_beam/gps/minphi 0 deg
+/gate/source/electron_beam/gps/maxphi 0 deg
+/gate/source/electron_beam/gps/type Plane
+/gate/source/electron_beam/gps/shape Circle
+/gate/source/electron_beam/gps/radius 15 mm
+
+#--------------------------------------
+# START THE ACQUISITION (DOCEAVO y ULTIMO)
+#--------------------------------------
+/control/execute acquisition.mac
+
+exit

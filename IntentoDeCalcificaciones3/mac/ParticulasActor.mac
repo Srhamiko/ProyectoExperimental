@@ -1,0 +1,5 @@
+/gate/actor/addActor ParticleInVolumeActor      MyActor
+/gate/actor/MyActor/save                        MyOutputFile.mhd
+/gate/actor/MyActor/attachTo                    CTscanner
+/gate/actor/MyActor/setResolution               100 100 20
+/gate/actor/MyActor/stepHitType                 post
