@@ -1,0 +1,95 @@
+/gate/geometry/setMaterialDatabase ../data/GateMaterials.db 
+
+/gate/world/geometry/setXLength 2. m 
+/gate/world/geometry/setYLength 2. m 
+/gate/world/geometry/setZLength 2. m 
+/gate/world/setMaterial Air 
+/gate/world/vis/setVisible 0 
+
+/gate/world/daughters/name CTscanner 
+/gate/world/daughters/insert box 
+/gate/CTscanner/setMaterial Tungsten 
+/gate/CTscanner/geometry/setXLength 25 mm 
+/gate/CTscanner/geometry/setYLength 25 mm 
+/gate/CTscanner/geometry/setZLength 5 mm 
+/gate/CTscanner/vis/forceSolid 
+/gate/CTscanner/vis/setColor yellow 
+/gate/CTscanner/placement/setTranslation 0. 0. 5. cm 
+
+/gate/world/daughters/name Fantoma 
+/gate/world/daughters/insert box 
+/gate/Fantoma/placement/setTranslation 0.0 0.0 0.0 cm 
+/gate/Fantoma/geometry/setXLength 3 cm 
+/gate/Fantoma/geometry/setYLength 3 cm 
+/gate/Fantoma/geometry/setZLength 2 mm 
+/gate/Fantoma/setMaterial PMMA 
+/gate/Fantoma/vis/forceWireframe 
+/gate/Fantoma/vis/setColor red 
+
+/gate/Fantoma/placement/setRotationAxis 0 0 1 
+/gate/Fantoma/placement/setRotationAngle -7 deg 
+ 
+/gate/Fantoma/daughters/name crystalHAs 
+/gate/Fantoma/daughters/insert sphere 
+/gate/crystalHAs/placement/setTranslation -4.5 0. 0. mm 
+
+/gate/crystalHAs/geometry/setRmin 0 mm 
+/gate/crystalHAs/geometry/setRmax 1 mm 
+/gate/crystalHAs/geometry/setPhiStart 0 deg 
+/gate/crystalHAs/geometry/setDeltaPhi 360 deg 
+/gate/crystalHAs/geometry/setThetaStart 0 deg 
+/gate/crystalHAs/geometry/setDeltaTheta 360 deg 
+/gate/crystalHAs/setMaterial HA 
+#/gate/crystalHAs/vis/forceWireframe 
+/gate/crystalHAs/vis/setColor yellow 
+
+/gate/crystalHAs/repeaters/insert linear 
+/gate/crystalHAs/linear/setRepeatNumber 5 
+/gate/crystalHAs/linear/setRepeatVector 2. 0. 0. mm  
+/gate/crystalHAs/linear/autoCenter true  
+ 
+/gate/physics/addPhysicsList emstandard_opt4 
+
+
+/gate/actor/addActor DoseActor     MyActor 
+
+/gate/actor/MyActor/save                        MyOutputFile14.mhd 
+
+/gate/actor/MyActor/attachTo                    CTscanner 
+/gate/actor/MyActor/setResolution               256 256 1 
+/gate/actor/MyActor/stepHitType                 post 
+
+
+/control/verbose 0 
+/run/verbose 0 
+/run/particle/verbose 0 
+/event/verbose 0 
+/tracking/verbose 0 
+/tracking/verbose 0 
+/gate/generator/verbose 0 
+/gate/source/verbose 0 
+/run/particle/verbose 0 
+
+/gate/run/initialize
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed auto
+
+/gate/source/addSource electron_beam gps
+/gate/source/electron_beam/gps/particle gamma 
+/gate/source/electron_beam/gps/ene/type Gauss 
+/gate/source/electron_beam/gps/ene/mono 0.02 MeV 
+/gate/source/electron_beam/gps/ene/sigma 0.00216 MeV 
+/gate/source/electron_beam/gps/centre 0 0 -23 cm 
+/gate/source/electron_beam/gps/angtype iso 
+/gate/source/electron_beam/gps/mintheta 0 deg 
+/gate/source/electron_beam/gps/maxtheta 0 deg 
+/gate/source/electron_beam/gps/minphi 0 deg 
+/gate/source/electron_beam/gps/maxphi 0 deg 
+/gate/source/electron_beam/gps/type Plane 
+/gate/source/electron_beam/gps/shape Square
+/gate/source/electron_beam/gps/halfx 15 mm
+/gate/source/electron_beam/gps/halfy 15 mm
+
+/gate/application/setTotalNumberOfPrimaries 1e6 
+/gate/application/start 
+
